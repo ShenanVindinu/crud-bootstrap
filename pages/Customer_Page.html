@@ -43,6 +43,28 @@
             background-color: green;
         }
 
+        #Customer_Card {
+            position: relative;
+            width: 40vw;
+        }
+
+
+        .dropdown {
+            color: white;
+        }
+
+        .btn-outline-secondary:hover {
+            color: white;
+            background-color: #babfc7;
+        }
+
+        #search_Name_DropDown>div {
+            position: relative;
+            left: 90px;
+            bottom: 37.5px;
+        }
+
+
 
 
     </style>
@@ -115,7 +137,7 @@
                 </ol>
             </nav>
         </div>
-        <div class="card-body">
+        <div id="Customer_Card" class="card-body">
             <div class="card">
                 <div id="Customer_Card_Header" class="card-header">
                     Customer Search
@@ -126,8 +148,20 @@
                         <input type="text" class="form-control" placeholder="Input Name/NIC/Tp Here" aria-label="" aria-describedby="basic-addon1">
                     </div>
 
-                    <button type="button" class="btn btn-success">Search</button>
+                    <div id="search_Name_DropDown">
+                        <button type="button" class="btn btn-success">Search</button>
+                        <div id="Name_dropdown" class="dropdown">
+                            <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Name
+                            </a>
 
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
