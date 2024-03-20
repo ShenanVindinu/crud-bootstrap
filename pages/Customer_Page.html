@@ -20,7 +20,18 @@
     <style>
 
 
+        .breadcrumb {
+            top: 7px;
+            position: relative;
+        }
 
+        #Main_Card  {
+            width: 80vw;
+            height: 75vh;
+            top: 5vh;
+            left: 10vw;
+            position: relative;
+        }
 
 
 
@@ -77,6 +88,26 @@
         </div>
     </nav>
 </header>
+
+<main>
+
+    <div id="Main_Card" class="card">
+        <div class="card-header">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+</main>
 
 
 
