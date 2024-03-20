@@ -42,15 +42,36 @@
             color: white;
         }
 
+        .btn-dark {
+            padding: 20px;
+            background-color: #4F2730;
+        }
 
+        main>div>div>h3 {
+            text-align: center;
+            position: relative;
+            margin: 50px;
+        }
 
+        .fa-user  {
+            padding: 10px;
+        }
 
+        .fa-bag-shopping {
 
+            padding: 10px;
+        }
 
+        .fa-bowl-food {
+            padding: 10px;
+        }
 
-
-
-
+        .card-body {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            top: 7vw;
+        }
 
 
 
@@ -110,6 +131,28 @@
         </div>
     </nav>
 </header>
+
+<main>
+    <div class="card">
+        <div class="card-body">
+            <h3 id="Menu_Heading">Select Menu</h3>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-dark" type="button">
+                    <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+                    Customers
+                </button>
+                <button class="btn btn-dark" type="button">
+                    <i class="fa-solid fa-bag-shopping" style="color: #ffffff;"></i>
+                    Orders
+                </button>
+                <button class="btn btn-dark" type="button">
+                    <i class="fa-solid fa-bowl-food" style="color: #ffffff;"></i>
+                    Items
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
 
 
 
