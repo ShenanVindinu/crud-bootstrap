@@ -88,6 +88,10 @@
             color: white;
         }
 
+        .modal-header {
+            background-color: yellowgreen;
+        }
+
     </style>
 
 <body>
@@ -195,7 +199,7 @@
         </div>
 
         <div id="ButtonGroup2" class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <button type="button" class="btn btn-info">New Customer</button>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">New Customer</button>
             <button type="button" class="btn btn-warning">View All Customer</button>
         </div>
 
@@ -232,6 +236,40 @@
     </div>
 
 </main>
+
+
+<div class="modal" tabindex="-1" id="NewCustomerModal" aria-labelledby="NewCustomerModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Customer ID" aria-label="" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Customer Name" aria-label="" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Customer Address" aria-label="" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Customer Salary" aria-label="" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save</button>
+                <button type="button" class="btn btn-warning">Renew</button>
+                <button type="button" class="btn btn-info">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
