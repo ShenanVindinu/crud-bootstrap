@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Home">
-    <meta name="keywords" content="shenan vindinu Pos System Dashboard Home">
+    <meta name="description" content="Tomatoe Login">
+    <meta name="keywords" content="shenan vindinu Pos System Dashboard Login">
     <meta name="author" content="Shenan Vindinu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>Home</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="assets/fontawesome/fontawesome-free-6.5.1-web/css/all.min.css">
     <link rel="stylesheet" href="assets/normalize.css">
@@ -19,6 +19,39 @@
 
     <style>
 
+        section>h1 {
+            text-align: center;
+            position: relative;
+            top: 20vh;
+            font-family: "Josefin Sans",serif;
+        }
+
+        .container {
+            width: 30vw;
+            top: 30vh;
+            position: relative;
+        }
+
+        .btn-primary {
+            position: relative;
+            top: 35vh;
+            background-color: yellowgreen;
+            font-size: larger;
+            color: black;
+        }
+
+        section>div>h5 {
+            position: relative;
+            top: 35.5vh;
+            text-align: center;
+        }
+
+        section>div>a {
+            position: relative;
+            top: 35vh;
+            text-align: center;
+            font-size: large;
+        }
 
 
 
@@ -31,7 +64,27 @@
 
 
 
+<section>
 
+    <h1>Login</h1>
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="UserName" aria-label="" aria-describedby="basic-addon1">
+        </div>
+        <br>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Password" aria-label="" aria-describedby="basic-addon1">
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 col-3 mx-auto">
+        <button class="btn btn-primary" type="button">SignIn</button>
+        <h5>Or</h5>
+        <a href="">SingUp</a>
+    </div>
+
+
+</section>
 
 
 
