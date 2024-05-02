@@ -17,70 +17,34 @@
 
 </head>
 
-    <style>
-
-        section>h1 {
-            text-align: center;
-            position: relative;
-            top: 20vh;
-            font-family: "Josefin Sans",serif;
-        }
-
-        .container {
-            width: 30vw;
-            top: 30vh;
-            position: relative;
-        }
-
-        .btn-primary {
-            position: relative;
-            top: 35vh;
-            background-color: yellowgreen;
-            font-size: larger;
-            color: black;
-        }
-
-        section>div>h5 {
-            position: relative;
-            top: 35.5vh;
-            text-align: center;
-        }
-
-        section>div>a {
-            position: relative;
-            top: 35vh;
-            text-align: center;
-            font-size: large;
-        }
-
-
-
-
-
-
-    </style>
-
 <body>
 
 
 
 <section>
 
-    <h1>Login</h1>
-    <div class="container">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="UserName" aria-label="" aria-describedby="basic-addon1">
-        </div>
-        <br>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Password" aria-label="" aria-describedby="basic-addon1">
+
+    <div class="container d-flex justify-content-center align-items-center my-5 ">
+        <div class="col-4">
+            <h1 class="text-center my-5">Login</h1>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="UserName" aria-label="" aria-describedby="basic-addon1">
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Password" aria-label="" aria-describedby="basic-addon1">
+            </div>
         </div>
     </div>
 
-    <div class="d-grid gap-2 col-3 mx-auto">
-        <button class="btn btn-primary" type="button">SignIn</button>
-        <h5>Or</h5>
-        <a href="">SingUp</a>
+    <div class="d-flex justify-content-center">
+        <div class="col-3">
+            <div class="d-grid gap-5 mx-auto">
+                <button class="btn btn-success" style="background-color: yellowgreen" type="button">SignIn</button>
+                <h5 class="text-center">Or</h5>
+                <a class="text-center" href="">SignUp</a>
+            </div>
+        </div>
     </div>
 
 
