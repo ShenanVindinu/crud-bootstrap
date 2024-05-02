@@ -32,13 +32,16 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a id="Home" class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a id="GoToHome" class="nav-link" aria-current="page">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Orders_Page.html">Orders</a>
+                            <a id="GoToOrders" class="nav-link" >Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Items_Page.html">Items</a>
+                            <a id="GoToItems" class="nav-link">Items</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="GoToCustomers" class="nav-link">Customer</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,13 +57,13 @@
                     </ul>
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li id="SignupButtonH" class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../pages/Customer_Page.html">
+                            <a class="nav-link" aria-current="page">
                                 <i class="fa-solid fa-user-plus"></i>
                                 SignUp
                             </a>
                         </li>
-                        <li id="LogoutButtonH" class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html">
+                        <li class="nav-item">
+                            <a id="LogoutButton" class="nav-link" aria-current="page">
                                 <i class="fa-solid fa-right-to-bracket" style="color: white"></i>
                                 Logout
                             </a>
@@ -91,7 +94,7 @@
     <div class="d-flex justify-content-center">
         <div class="col-3">
             <div class="d-grid gap-5 mx-auto">
-                <button class="btn btn-success" style="background-color: yellowgreen" type="button">SignIn</button>
+                <button id="loginButton" class="btn btn-success" style="background-color: yellowgreen" type="button">SignIn</button>
                 <h5 class="text-center">Or</h5>
                 <a class="text-center" href="">SignUp</a>
             </div>
@@ -639,9 +642,72 @@
 
 
 
-<script></script>
+
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<script>
+
+    $("#loginPage").css({display: 'block'});
+    $("#HomePage").css({display: 'none'});
+    $("#CustomerPage").css({display: 'none'});
+    $("#ItemsPage").css({display: 'none'});
+    $("#OrdersPage").css({display: 'none'});
+    $("#Header").css({display: 'none'});
+
+    $("#GoToHome").eq(0).on('click', () => {
+        $("#HomePage").css({display: 'block'});
+        $("#CustomerPage").css({display: 'none'});
+        $("#ItemsPage").css({display: 'none'});
+        $("#OrdersPage").css({display: 'none'});
+        $("#Header").css({display: 'block'});
+    });
+
+    $("#GoToOrders").eq(0).on('click', () => {
+        $("#HomePage").css({display: 'none'});
+        $("#CustomerPage").css({display: 'none'});
+        $("#ItemsPage").css({display: 'none'});
+        $("#OrdersPage").css({display: 'block'});
+        $("#Header").css({display: 'block'});
+    });
+
+    $("#GoToCustomers").eq(0).on('click', () => {
+        $("#HomePage").css({display: 'none'});
+        $("#CustomerPage").css({display: 'block'});
+        $("#ItemsPage").css({display: 'none'});
+        $("#OrdersPage").css({display: 'none'});
+        $("#Header").css({display: 'block'});
+    });
+
+    $("#GoToItems").eq(0).on('click', () => {
+        $("#HomePage").css({display: 'none'});
+        $("#CustomerPage").css({display: 'none'});
+        $("#ItemsPage").css({display: 'block'});
+        $("#OrdersPage").css({display: 'none'});
+        $("#Header").css({display: 'block'});
+    });
+
+    $("#loginButton").eq(0).on('click', () => {
+        $("#HomePage").css({display: 'block'});
+        $("#CustomerPage").css({display: 'none'});
+        $("#ItemsPage").css({display: 'none'});
+        $("#OrdersPage").css({display: 'none'});
+        $("#Header").css({display: 'block'});
+        $("#loginPage").css({display: 'none'});
+    });
+
+    $("#LogoutButton").eq(0).on('click', () => {
+        $("#HomePage").css({display: 'none'});
+        $("#CustomerPage").css({display: 'none'});
+        $("#ItemsPage").css({display: 'none'});
+        $("#OrdersPage").css({display: 'none'});
+        $("#Header").css({display: 'none'});
+        $("#loginPage").css({display: 'block'});
+    });
+
+
+</script>
 
 </body>
 </html>
