@@ -20,8 +20,59 @@
 <body>
 
 
+<section id="Header">
+    <header>
+        <nav class="navbar navbar-expand-lg" >
+            <div class="container-fluid">
+                <!--            <a class="navbar-brand" href="#">Navbar</a>-->
+                <img class="navbar-brand" id="navbar-logo" src="assets/Tomatoe%20Logo.png" title="tomato header logo" alt="tomato-logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a id="Home" class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Orders_Page.html">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Items_Page.html">Items</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Others
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
 
-<section>
+                    </ul>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li id="SignupButtonH" class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../pages/Customer_Page.html">
+                                <i class="fa-solid fa-user-plus"></i>
+                                SignUp
+                            </a>
+                        </li>
+                        <li id="LogoutButtonH" class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">
+                                <i class="fa-solid fa-right-to-bracket" style="color: white"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</section>
+
+<section id="loginPage">
 
 
     <div class="container d-flex justify-content-center align-items-center my-5 ">
@@ -48,6 +99,540 @@
     </div>
 
 
+</section>
+
+<section id="HomePage">
+    <main>
+        <div class="container">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h3 class="text-center my-5" id="Menu_Heading">Select Menu</h3>
+                <div class="d-grid gap-5 col-6 mx-auto">
+                    <button class="btn btn-dark btn-lg" type="button"  onclick="window.location.href='../pages/Customer_Page.html';">
+                        <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+                        Customers
+                    </button>
+
+                    <button class="btn btn-dark btn-lg" type="button"  onclick="window.location.href='../pages/Orders_Page.html';">
+                        <i class="fa-solid fa-bag-shopping" style="color: #ffffff;"></i>
+                        Orders
+                    </button>
+
+                    <button class="btn btn-dark btn-lg" type="button" onclick="window.location.href='../pages/Items_Page.html';">
+                        <i class="fa-solid fa-bowl-food" style="color: #ffffff;"></i>
+                        Items
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
+
+<section id="CustomerPage">
+    <main>
+
+
+
+        <div class="container-lg my-5">
+            <h3>
+                <i class="fa-regular fa-user" style="color: #4F2730"></i>
+                Customer
+            </h3>
+            <div class="card">
+                <div class="card-header">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="d-flex ">
+                    <div class="card-body col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Customer Search
+                            </div>
+                            <div class="card-body">
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Input Name/NIC/Tp Here" aria-label="" aria-describedby="basic-addon1">
+                                </div>
+
+
+                                <button type="button" class="btn btn-success mt-5">Search</button>
+
+                                <div class="container mt-3">
+                                    <div class="dropdown pl-0">
+                                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Name
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-4 mb-3">
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-info">Details</button>
+                                <button type="button" class="btn btn-success">Clear</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container mt-5 ml-1">
+                        <div id="ButtonGroup2" class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">New Customer</button>
+                            <button type="button" class="btn btn-warning">View All Customer</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <table class="table">
+                    <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">C001</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>200000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C002</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>200000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C003</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>200000</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <div class="modal" tabindex="-1" id="NewCustomerModal" aria-labelledby="NewCustomerModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Customer ID" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Customer Name" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Customer Address" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Customer Salary" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-warning">Renew</button>
+                    <button type="button" class="btn btn-info">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="ItemsPage">
+    <main>
+
+        <div  class="container my-5">
+            <h3>
+                <i class="fa-solid fa-bowl-food" style="color: #4F2730;"></i>
+                Item
+            </h3>
+
+            <div class="card">
+
+
+                <div class="card-header">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Item</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="d-flex">
+                    <div class="card-body col-12">
+                        <div class="card">
+                            <div id="Customer_Card_Header" class="card-header">
+                                Item Search
+                            </div>
+                            <div class="card-body">
+
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Input Item Name/Code Here" aria-label="" aria-describedby="basic-addon1">
+                                </div>
+
+                                <div>
+                                    <button type="button" class="btn btn-success">Search</button>
+
+                                    <div class="container mt-3">
+                                        <div id="Name_dropdown" class="dropdown">
+                                            <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Name
+                                            </a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container mt-5">
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewItemModal">New Item</button>
+                            <button type="button" class="btn btn-warning">View All Item</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="container mt-4 mb-4">
+                    <div id="ButtonGroup1" class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-info">Details</button>
+                        <button type="button" class="btn btn-success">Clear</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <table class="table">
+                <thead class="table-primary">
+                <tr>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">I001</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">I002</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">I003</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>200000</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    </main>
+
+    <div class="modal" tabindex="-1" id="NewItemModal" aria-labelledby="NewItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Code" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Name" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Price" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Quantity" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-warning">Renew</button>
+                    <button type="button" class="btn btn-info">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="OrdersPage">
+    <main class="container mt-4">
+
+        <div class="card">
+            <div class="card-header">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Orders</li>
+                    </ol>
+                </nav>
+            </div>
+
+
+
+            <div class="row row-1 cols-3">
+
+                <div class="col">
+                    <div id="Invoice_Detail" class="card-body">
+                        <div class="card">
+                            <div id="Invoice_Card_Header" class="card-header">
+                                Invoice Details
+                            </div>
+                            <div class="card-body">
+
+                                <div class="container text-lg-start">
+                                    <div class="row row-cols-2">
+                                        <div class="col">
+                                            <h6>Order ID</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="D001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Date</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="date" class="form-control" placeholder="D001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Customer</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="D001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Customer ID</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="C001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Name</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Vindinu" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Salary</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="$10,000,000,000" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <h6>Address</h6>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Colombo" aria-label="" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div id="Item_Select" class="card-body">
+                        <div class="card">
+                            <div id="Item_Select_Header" class="card-header">
+                                Items Select
+                            </div>
+                            <div class="card-body">
+
+                                <div class="container text-lg-start">
+                                    <div class="row row-cols-2">
+                                        <div class="col">
+                                            <h6>Item</h6>
+                                            <div class="dropdown">
+                                                <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    P002
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Date</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="date" class="form-control" placeholder="D001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Customer</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="D001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Customer ID</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="C001" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Name</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Vindinu" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Salary</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="$10,000,000,000" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <h6>Address</h6>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Colombo" aria-label="" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div id="Total" class="card-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <br>
+                                <h3>Total : 10050</h3>
+                                <h3>Sub Total : 945</h3>
+                                <br>
+                                <br>
+                                <div class="container text-lg-start">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6>Cash</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="5000" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Discount</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="number" class="form-control" placeholder="10" aria-label="" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <h6>Balance</h6>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="4050" aria-label="" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button type="button" class="btn btn-success">Success</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <table class="table">
+                <thead class="table-primary">
+                <tr>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">I001</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>200000</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">I002</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>200000</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">I003</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>200000</td>
+                    <td>200000</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </main>
 </section>
 
 
