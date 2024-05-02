@@ -17,90 +17,7 @@
 
 </head>
 
-    <style>
 
-        body {
-            overflow-x: hidden;
-        }
-
-
-        .breadcrumb {
-            top: 7px;
-            position: relative;
-        }
-
-        #Main_Card  {
-            width: 92vw;
-            height: 75vh;
-            left: 0;
-            top: 5vh;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            position: relative;
-        }
-
-        main>h3 {
-            position: relative;
-            margin: auto;
-            top: 25px;
-            left: 80px;
-            text-align: left;
-        }
-
-        #Customer_Card_Header {
-            background-color: green;
-        }
-
-        #Customer_Card {
-            position: relative;
-            width: 50vw;
-            padding: 25px;
-        }
-
-
-        .dropdown {
-            color: white;
-        }
-
-        .btn-outline-secondary:hover {
-            color: white;
-            background-color: #babfc7;
-        }
-
-        #search_Name_DropDown>div {
-            position: absolute;
-            left: 90px;
-            bottom: 16px;
-        }
-
-        #ButtonGroup1 {
-            position: relative;
-            width: 15vw;
-            bottom: 9vh;
-            left: 3vw;
-        }
-
-        #ButtonGroup2 {
-            position: relative;
-            width: 30vw;
-            left: 58%;
-            bottom: 35vh;
-        }
-
-        .btn-info {
-            color: white;
-        }
-
-        .modal-header {
-            background-color: yellowgreen;
-        }
-
-        #SignupButton {
-            color: white;
-        }
-
-    </style>
 
 <body>
 
@@ -156,102 +73,107 @@
 
 <main>
 
-    <h3>
-        <i class="fa-regular fa-user" style="color: #4F2730"></i>
-        Customer
-    </h3>
 
-    <div id="Main_Card" class="card">
-        <div class="card-header">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Customer</li>
-                </ol>
-            </nav>
-        </div>
 
-        <div id="Customer_Card" class="card-body">
-            <div class="card">
-                <div id="Customer_Card_Header" class="card-header">
-                    Customer Search
-                </div>
-                <div class="card-body">
+    <div class="container-lg my-5">
+        <h3>
+            <i class="fa-regular fa-user" style="color: #4F2730"></i>
+            Customer
+        </h3>
+        <div class="card">
+            <div class="card-header">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                    </ol>
+                </nav>
+            </div>
 
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Input Name/NIC/Tp Here" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div id="search_Name_DropDown">
-                        <button type="button" class="btn btn-success">Search</button>
-                        <div class="container">
-                            <div id="Name_dropdown" class="dropdown">
-                                <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Name
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
+            <div class="d-flex ">
+                <div class="card-body col-12">
+                    <div class="card">
+                        <div id="Customer_Card_Header" class="card-header">
+                            Customer Search
                         </div>
+                        <div class="card-body">
 
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Input Name/NIC/Tp Here" aria-label="" aria-describedby="basic-addon1">
+                            </div>
+
+
+                                <button type="button" class="btn btn-success mt-5">Search</button>
+
+                                <div class="container mt-3">
+                                    <div class="dropdown pl-0">
+                                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Name
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="container mt-4 mb-3">
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-info">Details</button>
+                            <button type="button" class="btn btn-success">Clear</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container mt-5 ml-1">
+                    <div id="ButtonGroup2" class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">New Customer</button>
+                        <button type="button" class="btn btn-warning">View All Customer</button>
                     </div>
                 </div>
+
             </div>
+
+
+            <table class="table">
+                <thead class="table-primary">
+                <tr>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">C002</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">C003</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>200000</td>
+                </tr>
+                </tbody>
+            </table>
+
         </div>
-
-        <div class="container">
-            <div id="ButtonGroup1" class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-info">Details</button>
-                <button type="button" class="btn btn-success">Clear</button>
-            </div>
-        </div>
-
-        <div class="container">
-            <div id="ButtonGroup2" class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">New Customer</button>
-                <button type="button" class="btn btn-warning">View All Customer</button>
-            </div>
-        </div>
-
-
-
-
-        <table class="table">
-            <thead class="table-primary">
-            <tr>
-                <th scope="col">Customer ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Salary</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">C001</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>200000</td>
-            </tr>
-            <tr>
-                <th scope="row">C002</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>200000</td>
-            </tr>
-            <tr>
-                <th scope="row">C003</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>200000</td>
-            </tr>
-            </tbody>
-        </table>
-
     </div>
+
 
 </main>
 
