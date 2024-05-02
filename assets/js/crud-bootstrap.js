@@ -22,6 +22,14 @@ $("#GoToOrders").eq(0).on('click', () => {
     $("#Header").css({display: 'block'});
 });
 
+$("#OrdersButtonInHome").eq(0).on('click', () => {
+    $("#HomePage").css({display: 'none'});
+    $("#CustomerPage").css({display: 'none'});
+    $("#ItemsPage").css({display: 'none'});
+    $("#OrdersPage").css({display: 'block'});
+    $("#Header").css({display: 'block'});
+});
+
 $("#GoToCustomers").eq(0).on('click', () => {
     $("#HomePage").css({display: 'none'});
     $("#CustomerPage").css({display: 'block'});
@@ -30,7 +38,23 @@ $("#GoToCustomers").eq(0).on('click', () => {
     $("#Header").css({display: 'block'});
 });
 
+$("#CustomerButtonInHome").eq(0).on('click', () => {
+    $("#HomePage").css({display: 'none'});
+    $("#CustomerPage").css({display: 'block'});
+    $("#ItemsPage").css({display: 'none'});
+    $("#OrdersPage").css({display: 'none'});
+    $("#Header").css({display: 'block'});
+});
+
 $("#GoToItems").eq(0).on('click', () => {
+    $("#HomePage").css({display: 'none'});
+    $("#CustomerPage").css({display: 'none'});
+    $("#ItemsPage").css({display: 'block'});
+    $("#OrdersPage").css({display: 'none'});
+    $("#Header").css({display: 'block'});
+});
+
+$("#ItemsButtonInHome").eq(0).on('click', () => {
     $("#HomePage").css({display: 'none'});
     $("#CustomerPage").css({display: 'none'});
     $("#ItemsPage").css({display: 'block'});
