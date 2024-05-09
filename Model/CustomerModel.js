@@ -15,5 +15,22 @@ function clearCustomers() {
     displayCustomers([]);
 }
 
+function deleteCustomers(customerId, customerName, customerAddress, customerSalary) {
 
-export { addCustomer, getAllCustomers, clearCustomers };
+    let index = customers.findIndex(customer =>
+        customer.id === customerId &&
+        customer.name === customerName &&
+        customer.address === customerAddress &&
+        customer.salary === customerSalary
+    );
+
+    if (index !== -1) {
+
+        customers.splice(index, 1);
+
+        displayCustomers(customers);
+    }
+}
+
+
+export { addCustomer, getAllCustomers, clearCustomers, deleteCustomers };

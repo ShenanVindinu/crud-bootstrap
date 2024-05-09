@@ -1,4 +1,4 @@
-import { addCustomer, getAllCustomers, clearCustomers } from '../Model/CustomerModel.js';
+import { addCustomer, getAllCustomers, clearCustomers, deleteCustomers } from '../Model/CustomerModel.js';
 
 $(document).ready(function() {
     $("#SaveConfirm").click(function() {
@@ -13,16 +13,19 @@ $(document).ready(function() {
         clearFields();
     });
 
+    $("#CustomerDeleteButton").click(function() {
+        deleteCus();
+    });
+
 });
 
 
-
 function saveCustomer() {
+
     let customerId = document.getElementById("CustomerIDField").value;
     let customerName = document.getElementById("CustomerNameField").value;
     let customerAddress = document.getElementById("CustomerAddressField").value;
     let customerSalary = document.getElementById("CustomerSalaryField").value;
-
 
     let customer = {
         id: customerId,
@@ -37,6 +40,15 @@ function saveCustomer() {
 
     let allCustomers = getAllCustomers();
     displayCustomers(allCustomers);
+}
+
+function deleteCus() {
+    let customerId = document.getElementById("CustomerIDField").value;
+    let customerName = document.getElementById("CustomerNameField").value;
+    let customerAddress = document.getElementById("CustomerAddressField").value;
+    let customerSalary = document.getElementById("CustomerSalaryField").value;
+
+    deleteCustomers(customerId, customerName, customerAddress, customerSalary);
 }
 
 function displayCustomers(customers) {
