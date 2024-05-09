@@ -1,6 +1,7 @@
 import { addCustomer, getAllCustomers, clearCustomers, deleteCustomers, updateCustomer } from '../Model/CustomerModel.js';
 
 $(document).ready(function() {
+
     $("#SaveConfirm").click(function() {
         saveCustomer();
         clearFields();
