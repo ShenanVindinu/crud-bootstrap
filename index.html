@@ -171,7 +171,7 @@
                             <input type="email" class="form-control" id="CustomerSalaryField" placeholder="2000000">
                         </div>
 
-                        <div class="container mt-4 mb-3">
+                        <div class="container mt-4 mb-3" style="margin: 0; padding: 0">
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">Save</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Confirm</button>
+                    <button id="SaveConfirm" type="button" class="btn btn-primary">Confirm</button>
                 </div>
             </div>
         </div>
@@ -615,5 +615,11 @@
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="assets/js/crud-bootstrap.js"></script>
+
+<!-- Include customerModel.js as a module -->
+<script src="Model/Customer.js" type="module"></script>
+
+<!-- Include customerController.js as a module -->
+<script src="Controller/CustomerController.js" type="module"></script>
 </body>
 </html>
