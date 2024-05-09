@@ -151,24 +151,24 @@
                 <div class="d-flex ">
                     <div class="card-body col-12">
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-5">
                             <label for="CustomerIDField" class="form-label">Customer ID</label>
-                            <input type="email" class="form-control" id="CustomerIDField" placeholder="C001">
+                            <input type="text" class="form-control" id="CustomerIDField" placeholder="C001">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-5">
                             <label for="CustomerNameField" class="form-label">Customer Name</label>
-                            <input type="email" class="form-control" id="CustomerNameField" placeholder="Enter Name">
+                            <input type="text" class="form-control" id="CustomerNameField" placeholder="Enter Name">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-5">
                             <label for="CustomerAddressField" class="form-label">Customer Address</label>
-                            <input type="email" class="form-control" id="CustomerAddressField" placeholder="location">
+                            <input type="text" class="form-control" id="CustomerAddressField" placeholder="location">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-5">
                             <label for="CustomerSalaryField" class="form-label">Customer Salary</label>
-                            <input type="email" class="form-control" id="CustomerSalaryField" placeholder="2000000">
+                            <input type="text" class="form-control" id="CustomerSalaryField" placeholder="2000000">
                         </div>
 
                         <div class="container mt-4 mb-3" style="margin: 0; padding: 0">
@@ -262,56 +262,41 @@
                     </nav>
                 </div>
 
-                <div class="d-flex">
+
+                <div class="d-flex ">
                     <div class="card-body col-12">
-                        <div class="card">
-                            <div id="Customer_Card_Header" class="card-header">
-                                Item Search
-                            </div>
-                            <div class="card-body">
 
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Input Item Name/Code Here" aria-label="" aria-describedby="basic-addon1">
-                                </div>
+                        <div class="mb-3 col-5">
+                            <label for="ItemCodeField" class="form-label">Item ID</label>
+                            <input type="text" class="form-control" id="ItemCodeField" placeholder="I001">
+                        </div>
 
-                                <div>
-                                    <button type="button" class="btn btn-success">Search</button>
+                        <div class="mb-3 col-5">
+                            <label for="ItemNameField" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="ItemNameField" placeholder="Enter Name">
+                        </div>
 
-                                    <div class="container mt-3">
-                                        <div id="Name_dropdown" class="dropdown">
-                                            <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Name
-                                            </a>
+                        <div class="mb-3 col-5">
+                            <label for="ItemQTYField" class="form-label">Item QTY</label>
+                            <input type="text" class="form-control" id="ItemQTYField" placeholder="2">
+                        </div>
 
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                        <div class="mb-3 col-5">
+                            <label for="ItemPriceField" class="form-label">Unit Price</label>
+                            <input type="text" class="form-control" id="ItemPriceField" placeholder="200">
+                        </div>
 
-                                </div>
+                        <div class="container mt-4 mb-3" style="margin: 0; padding: 0">
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewItemModal">Save</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-info">Update</button>
+                                <button type="button" class="btn btn-success">Clear</button>
                             </div>
                         </div>
+
                     </div>
 
-                    <div class="container mt-5">
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewItemModal">New Item</button>
-                            <button type="button" class="btn btn-warning">View All Item</button>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="container mt-4 mb-4">
-                    <div id="ButtonGroup1" class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-info">Details</button>
-                        <button type="button" class="btn btn-success">Clear</button>
-                    </div>
                 </div>
 
             </div>
@@ -352,38 +337,24 @@
 
     </main>
 
-    <div class="modal" tabindex="-1" id="NewItemModal" aria-labelledby="NewItemModalLabel" aria-hidden="true">
+    <div class="modal" tabindex="-1" id="NewItemModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">New Item</h5>
+                    <h5 class="modal-title" id="ConfirmItemChanges">Confirm</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Code" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Name" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Price" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Quantity" aria-label="" aria-describedby="basic-addon1">
-                    </div>
+                    <p>Please Confirm item Changes.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save</button>
-                    <button type="button" class="btn btn-warning">Renew</button>
-                    <button type="button" class="btn btn-info">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="SaveConfirmItem" type="button" class="btn btn-primary">Confirm</button>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 
 <section id="OrdersPage">
