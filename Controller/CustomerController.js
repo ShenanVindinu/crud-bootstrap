@@ -1,4 +1,4 @@
-import { addCustomer, getAllCustomers, clearCustomers } from '../Model/Customer.js';
+import { addCustomer, getAllCustomers, clearCustomers } from '../Model/CustomerModel.js';
 
 $(document).ready(function() {
     $("#SaveConfirm").click(function() {
