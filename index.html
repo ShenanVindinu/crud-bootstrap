@@ -153,27 +153,27 @@
 
                         <div class="mb-3">
                             <label for="CustomerIDField" class="form-label">Customer ID</label>
-                            <input type="email" class="form-control" id="CustomerIDField">
+                            <input type="email" class="form-control" id="CustomerIDField" placeholder="C001">
                         </div>
 
                         <div class="mb-3">
                             <label for="CustomerNameField" class="form-label">Customer Name</label>
-                            <input type="email" class="form-control" id="CustomerNameField">
+                            <input type="email" class="form-control" id="CustomerNameField" placeholder="Enter Name">
                         </div>
 
                         <div class="mb-3">
                             <label for="CustomerAddressField" class="form-label">Customer Address</label>
-                            <input type="email" class="form-control" id="CustomerAddressField">
+                            <input type="email" class="form-control" id="CustomerAddressField" placeholder="location">
                         </div>
 
                         <div class="mb-3">
                             <label for="CustomerSalaryField" class="form-label">Customer Salary</label>
-                            <input type="email" class="form-control" id="CustomerSalaryField">
+                            <input type="email" class="form-control" id="CustomerSalaryField" placeholder="2000000">
                         </div>
 
                         <div class="container mt-4 mb-3">
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                <button type="button" class="btn btn-info">Save</button>
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">Save</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
                                 <button type="button" class="btn btn-info">Update</button>
                                 <button type="button" class="btn btn-success">Clear</button>
@@ -221,34 +221,19 @@
 
     </main>
 
-    <div class="modal" tabindex="-1" id="NewCustomerModal" aria-labelledby="NewCustomerModalLabel1" aria-hidden="true">
+    <div class="modal" tabindex="-1" id="NewCustomerModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">New Customer</h5>
+                    <h5 class="modal-title">Confirm</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Customer ID" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Customer Name" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Customer Address" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Customer Salary" aria-label="" aria-describedby="basic-addon1">
-                    </div>
+                    <p>Please Confirm Changes.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save</button>
-                    <button type="button" class="btn btn-warning">Renew</button>
-                    <button type="button" class="btn btn-info">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Confirm</button>
                 </div>
             </div>
         </div>
