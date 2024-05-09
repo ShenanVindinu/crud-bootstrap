@@ -32,5 +32,25 @@ function deleteCustomers(customerId, customerName, customerAddress, customerSala
     }
 }
 
+function updateCustomer(customerId, customerName, customerAddress, customerSalary) {
 
-export { addCustomer, getAllCustomers, clearCustomers, deleteCustomers };
+    let index = customers.findIndex(customer => customer.id === customerId);
+
+    if (index !== -1) {
+
+        customers[index] = {
+            id: customerId,
+            name: customerName,
+            address: customerAddress,
+            salary: customerSalary
+        };
+
+
+        displayCustomers(customers);
+    } else {
+        console.log("Customer not found.");
+    }
+}
+
+
+export { addCustomer, getAllCustomers, clearCustomers, deleteCustomers,updateCustomer };
