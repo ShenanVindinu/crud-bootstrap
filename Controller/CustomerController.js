@@ -1,4 +1,4 @@
-import { addCustomer, getAllCustomers } from '../Model/Customer.js';
+import { addCustomer, getAllCustomers, clearCustomers } from '../Model/Customer.js';
 
 $(document).ready(function() {
     $("#SaveConfirm").click(function() {
@@ -7,7 +7,15 @@ $(document).ready(function() {
 
         $("#NewCustomerModal").modal("hide");
     });
+
+    $("#CustomerClearBt").click(function() {
+        clearCustomers();
+        clearFields();
+    });
+
 });
+
+
 
 function saveCustomer() {
     let customerId = document.getElementById("CustomerIDField").value;
@@ -64,3 +72,7 @@ function clearFields() {
     document.getElementById("CustomerAddressField").value = "";
     document.getElementById("CustomerSalaryField").value = "";
 }
+
+export { displayCustomers };
+
+
