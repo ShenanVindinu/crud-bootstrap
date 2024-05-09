@@ -133,8 +133,6 @@
 <section id="CustomerPage">
     <main>
 
-
-
         <div class="container-lg my-5">
             <h3>
                 <i class="fa-regular fa-user" style="color: #4F2730"></i>
@@ -152,50 +150,36 @@
 
                 <div class="d-flex ">
                     <div class="card-body col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                Customer Search
-                            </div>
-                            <div class="card-body">
 
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Input Name/NIC/Tp Here" aria-label="" aria-describedby="basic-addon1">
-                                </div>
+                        <div class="mb-3">
+                            <label for="CustomerIDField" class="form-label">Customer ID</label>
+                            <input type="email" class="form-control" id="CustomerIDField">
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="CustomerNameField" class="form-label">Customer Name</label>
+                            <input type="email" class="form-control" id="CustomerNameField">
+                        </div>
 
-                                <button type="button" class="btn btn-success mt-5">Search</button>
+                        <div class="mb-3">
+                            <label for="CustomerAddressField" class="form-label">Customer Address</label>
+                            <input type="email" class="form-control" id="CustomerAddressField">
+                        </div>
 
-                                <div class="container mt-3">
-                                    <div class="dropdown pl-0">
-                                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Name
-                                        </a>
-
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <label for="CustomerSalaryField" class="form-label">Customer Salary</label>
+                            <input type="email" class="form-control" id="CustomerSalaryField">
                         </div>
 
                         <div class="container mt-4 mb-3">
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <button type="button" class="btn btn-info">Save</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-info">Details</button>
+                                <button type="button" class="btn btn-info">Update</button>
                                 <button type="button" class="btn btn-success">Clear</button>
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="container mt-5 ml-1">
-                        <div id="ButtonGroup2" class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewCustomerModal">New Customer</button>
-                            <button type="button" class="btn btn-warning">View All Customer</button>
-                        </div>
                     </div>
 
                 </div>
