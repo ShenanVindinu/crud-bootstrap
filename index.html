@@ -227,9 +227,9 @@
                         <div class="container mt-4 mb-3" style="margin: 0; padding: 0">
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#NewItemModal">Save</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-info">Update</button>
-                                <button type="button" class="btn btn-success">Clear</button>
+                                <button type="button" class="btn btn-danger" id="deleteItem">Delete</button>
+                                <button type="button" class="btn btn-info" id="updateItem">Update</button>
+                                <button type="button" class="btn btn-success" id="clearItem">Clear</button>
                             </div>
                         </div>
 
@@ -271,7 +271,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ConfirmItemChanges">Confirm</h5>
+                    <h5 class="modal-title">Confirm</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -279,7 +279,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="SaveConfirmItem" type="button" class="btn btn-primary">Confirm</button>
+                    <button id="ConfirmItemChanges" type="button" class="btn btn-primary">Confirm</button>
                 </div>
             </div>
         </div>
@@ -508,6 +508,8 @@
 
 
 <script src="Model/CustomerModel.js" type="module"></script>
+<script src="Model/ItemModel.js" type="module"></script>
 <script src="Controller/CustomerController.js" type="module"></script>
+<script src="Controller/ItemController.js" type="module"></script>
 </body>
 </html>
