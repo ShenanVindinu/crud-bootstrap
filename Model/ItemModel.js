@@ -25,4 +25,14 @@ function clearItems() {
     displayItems([]);
 }
 
-export  { addItem, getAllItems, removeItem, clearItems };
+function updateItems(updatedItem) {
+
+    let index = items.findIndex(item => item.code === updatedItem.code);
+
+
+    if (index !== -1) {
+        items[index] = updatedItem;
+    }
+}
+
+export  { addItem, getAllItems, removeItem, clearItems, updateItems };

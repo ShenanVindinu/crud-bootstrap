@@ -1,4 +1,4 @@
-import {addItem, clearItems, getAllItems, removeItem} from "../Model/ItemModel.js";
+import { addItem, clearItems, getAllItems, removeItem, updateItems } from "../Model/ItemModel.js";
 
 $(document).ready(function() {
 
@@ -88,8 +88,24 @@ function deleteItem() {
 
 
 function updateItem() {
+    let itemCode = $("#ItemCodeField").val();
+    let itemName = $("#ItemNameField").val();
+    let itemPrice = $("#ItemPriceField").val();
+    let itemQty = $("#ItemQTYField").val();
+
+    let updatedItem = {
+        code: itemCode,
+        name: itemName,
+        price: itemPrice,
+        qty: itemQty
+    };
 
 
+    updateItems(updatedItem);
+
+
+    let allItems = getAllItems();
+    displayItems(allItems);
 }
 
 
