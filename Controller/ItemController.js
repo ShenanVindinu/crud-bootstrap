@@ -1,4 +1,4 @@
-import { addItem, getAllItems } from "../Model/ItemModel.js";
+import {addItem, clearItems, getAllItems, removeItem} from "../Model/ItemModel.js";
 
 $(document).ready(function() {
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 
     $("#clearItem").click(function() {
-        clearFields();
+        clearItems();
     });
 });
 
@@ -74,7 +74,16 @@ function displayItems(items) {
 
 function deleteItem() {
 
+    let selectedItemId = $("#ItemCodeField").val();
 
+
+    removeItem(selectedItemId);
+
+
+    let allItems = getAllItems();
+
+
+    displayItems(allItems);
 }
 
 
@@ -92,3 +101,5 @@ function clearFields() {
     $("#ItemPriceField").val("");
 
 }
+
+export { displayItems };

@@ -1,4 +1,5 @@
 import { items } from "../db/items.js";
+import {displayItems} from "../Controller/ItemController.js";
 
 function addItem(item) {
     items.push(item);
@@ -8,4 +9,20 @@ function getAllItems() {
     return items;
 }
 
-export  {addItem, getAllItems};
+function removeItem(itemId) {
+
+    let index = items.findIndex(item => item.code === itemId);
+
+
+    if (index !== -1) {
+        items.splice(index, 1);
+    }
+
+}
+
+function clearItems() {
+    items.length = 0;
+    displayItems([]);
+}
+
+export  { addItem, getAllItems, removeItem, clearItems };
