@@ -64,7 +64,6 @@ function loadOrderId() {
 
 }
 
-
 document.getElementById("CustomerIDDropDownMenu").addEventListener("click", function(event) {
 
     var target = event.target;
