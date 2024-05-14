@@ -1,4 +1,5 @@
 import { addItem, clearItems, getAllItems, removeItem, updateItems } from "../Model/ItemModel.js";
+import {getItemCodes} from "./OrderController.js";
 
 $(document).ready(function() {
 
@@ -43,6 +44,7 @@ function saveItem() {
 
     let allItems = getAllItems();
     displayItems(allItems);
+    getItemCodes();
 }
 
 function displayItems(items) {
