@@ -68,7 +68,6 @@ document.getElementById("CustomerIDDropDownMenu").addEventListener("click", func
 
 
         var customerId = target.textContent;
-        console.log(customerId);
 
         var customer = null;
 
@@ -82,7 +81,7 @@ document.getElementById("CustomerIDDropDownMenu").addEventListener("click", func
         if (customer !== undefined && customer !== null) {
             clearOtherFields();
             populateOtherFields(customer);
-            console.log(customer.id);
+
         } else {
             console.error("Customer not found with ID:", customerId);
         }
