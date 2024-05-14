@@ -1,29 +1,27 @@
-import {orders} from "/db/Orders.js";
 import {customers} from "../db/customers.js";
 import {items} from "../db/items.js";
+import {findMatchingCusId, findMatchingItemId, getOrderId, todaysDate} from "../Model/OrderModel.js";
 
 
 //Invoice Details
 
 function generateOrderID() {
-    const orderCount = orders.length;
-
-    return "D0" + orderCount + 1;
+    return getOrderId();
 }
 
 function generateDate() {
 
-    let today = new Date();
-
-    document.getElementById("OrderDateField").value = today.toISOString().split('T')[0];
+    todaysDate();
 
 }
 
 function addCusDropdownIDs(id) {
-    var newItem = document.createElement("a");
-    newItem.classList.add("dropdown-item");
-    newItem.textContent = id;
-    document.getElementById("CustomerIDDropDownMenu").appendChild(newItem);
+    var newItem = $("<a></a>");
+    newItem.addClass("dropdown-item");
+    newItem.text(id);
+
+    $("#CustomerIDDropDownMenu").append(newItem);
+
 }
 
 export function getCusIds() {
@@ -37,8 +35,7 @@ export function getCusIds() {
 }
 
 function clearCusDropdownMenu() {
-    var CusDropdownMenu = document.getElementById("CustomerIDDropDownMenu");
-    CusDropdownMenu.innerHTML = '';
+    $("#CustomerIDDropDownMenu").html("");
 }
 
 function clearCusFields() {
@@ -57,10 +54,10 @@ function populateCusFields(customer) {
 
 function loadOrderId() {
 
-    let orderIDInput = document.getElementById("OrderID");
+    var orderIDInput = $("#OrderID");
 
-    if (orderIDInput) {
-        orderIDInput.value = generateOrderID();
+    if (orderIDInput.length > 0) {
+        orderIDInput.val(generateOrderID());
     } else {
         console.error("OrderID input field not found.");
     }
@@ -74,28 +71,21 @@ document.getElementById("CustomerIDDropDownMenu").addEventListener("click", func
     console.log("Test");
 
     if (target.classList.contains("dropdown-item")) {
-        clearCusFields();
 
+        clearCusFields();
 
         var customerId = target.textContent;
 
-        var customer = null;
-
-        for (var i = 0; i < customers.length; i++) {
-            if (customers[i].id === customerId) {
-                customer = customers[i];
-                break;
-            }
-        }
+        var customer = findMatchingCusId(customerId);
 
         if (customer !== undefined && customer !== null) {
             clearCusFields();
             populateCusFields(customer);
-
         } else {
             console.error("Customer not found with ID:", customerId);
         }
     }
+
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -120,8 +110,7 @@ function clearItemFields() {
 }
 
 function clearItemDropdownMenu() {
-    var ItemDropdownMenu = document.getElementById("ItemDropDownMenu");
-    ItemDropdownMenu.innerHTML = '';
+    $("#ItemDropDownMenu").html("");
 }
 
 function populateItemFields(itemList) {
@@ -132,10 +121,10 @@ function populateItemFields(itemList) {
 }
 
 function addItemDropdownCodes(code) {
-    var newItem = document.createElement("a");
-    newItem.classList.add("dropdown-item");
-    newItem.textContent = code;
-    document.getElementById("ItemDropDownMenu").appendChild(newItem);
+    var newItem = $("<a></a>");
+    newItem.addClass("dropdown-item");
+    newItem.text(code);
+    $("#ItemDropDownMenu").append(newItem);
 }
 
 export function getItemCodes() {
@@ -151,31 +140,31 @@ export function getItemCodes() {
 document.getElementById("ItemDropDownMenu").addEventListener("click", function(event) {
 
     var target = event.target;
-    console.log("Test");
+    console.log("event Triggered");
 
     if (target.classList.contains("dropdown-item")) {
+
+
         clearItemFields();
 
 
         var ItemCode = target.textContent;
 
-        var itemList = null;
-
-        for (var i = 0; i < items.length; i++) {
-            if (items[i].code === ItemCode) {
-                itemList = items[i];
-                break;
-            }
-        }
+        var itemList = findMatchingItemId(ItemCode);
 
         if (itemList !== undefined && itemList !== null) {
+
+
             clearItemFields()
             populateItemFields(itemList);
+
 
         } else {
             console.error("Item not found with Code:", ItemCode);
         }
+
     }
+
 });
 
 
