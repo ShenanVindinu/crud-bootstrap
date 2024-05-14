@@ -1,4 +1,7 @@
 import { addCustomer, getAllCustomers, clearCustomers, deleteCustomers, updateCustomer } from '../Model/CustomerModel.js';
+import { getCusIds } from './OrderController.js';
+
+
 
 $(document).ready(function() {
 
@@ -45,6 +48,7 @@ function saveCustomer() {
 
     let allCustomers = getAllCustomers();
     displayCustomers(allCustomers);
+    getCusIds();
 }
 
 function deleteCus() {
