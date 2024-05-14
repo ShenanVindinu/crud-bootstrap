@@ -49,8 +49,8 @@ function saveItem() {
 
 function displayItems(items) {
 
-    let tableBody = $(".table tbody");
-    tableBody.empty();
+    let tableBody = $("#TableBodyItem");
+    tableBody.innerHTML = "";
 
     items.forEach(function(item) {
         let newRow = $("<tr>");
