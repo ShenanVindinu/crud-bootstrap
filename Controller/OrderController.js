@@ -1,14 +1,11 @@
+import { orders } from "/db/Orders.js";
+
 function generateOrderID() {
 
-    let randomString = Math.random().toString(36).substring(2, 3);
+    const orderCount = orders.length;
 
 
-    let now = new Date();
-    let year = now.getFullYear().toString().substr(-2);
-    let month = ('0' + (now.getMonth() + 1)).slice(-2);
-
-
-    let orderID = "D" + year + month + randomString;
+    const orderID = "D0" + orderCount+1;
 
     return orderID;
 }
