@@ -1,4 +1,5 @@
 import {orders} from "/db/Orders.js";
+import {customers} from "../db/customers.js";
 
 function generateOrderID() {
 
@@ -19,9 +20,26 @@ function generateDate() {
 
 }
 
+function populateCustomerDropdown(customers) {
+
+}
+
+function fillCustomerDetails(customer) {
+
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    let orderID = generateOrderID();
-    console.log("Generated Order ID:", orderID);
+
+    let orderIDInput = document.getElementById("OrderID");
+
+    if (orderIDInput) {
+        orderIDInput.value = generateOrderID();
+    } else {
+        console.error("OrderID input field not found.");
+    }
+
+
     generateDate();
+    populateCustomerDropdown(customers);
 });
 
