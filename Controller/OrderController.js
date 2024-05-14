@@ -1,6 +1,6 @@
 import {customers} from "../db/customers.js";
 import {items} from "../db/items.js";
-import {findMatchingCusId, findMatchingItemId, getOrderId, todaysDate} from "../Model/OrderModel.js";
+import {addToCart, findMatchingCusId, findMatchingItemId, getOrderId, todaysDate} from "../Model/OrderModel.js";
 
 
 //Invoice Details
@@ -166,4 +166,33 @@ document.getElementById("ItemDropDownMenu").addEventListener("click", function(e
 
 });
 
+$("#AddToCart").click(function () {
+
+   let CusId = $("#CustomerIDField2").val();
+   let CusName =$("#CustomerNameField2").val();
+   let CusSalary = $("#CustomerSalaryField2").val();
+   let CusAddress = $("#CustomerAddressField2").val();
+
+   let ItemCode = $("#ItemCodeField2").val();
+   let ItemName = $("#ItemNameField2").val();
+   let ItemPrice = $("#ItemPriceField2").val();
+   let ItemQTYOnHand = $("#QtyOnHandField").val();
+   let ItemQTY = $("#OrderQtyField").val();
+
+    let OrderDetails = {
+        CustomerID: CusId,
+        CustomerName: CusName,
+        CustomerSalary: CusSalary,
+        CustomerAddress: CusAddress,
+        ItemsCode: ItemCode,
+        ItemsName: ItemName,
+        ItemsPrice: ItemPrice,
+        ItemsOnHandQTY: ItemQTYOnHand,
+        ItemsQty: ItemQTY
+    };
+
+    addToCart(OrderDetails);
+
+
+});
 

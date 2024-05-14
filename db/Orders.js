@@ -1,3 +1,4 @@
 let orders = [];
+let orderDetails = [];
 
-export { orders };
+export { orders, orderDetails };

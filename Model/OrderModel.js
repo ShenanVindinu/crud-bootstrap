@@ -1,4 +1,4 @@
-import { orders } from "../db/Orders.js";
+import {orderDetails, orders} from "../db/Orders.js";
 import { customers } from "../db/customers.js";
 import {items} from "../db/items.js";
 
@@ -43,3 +43,48 @@ export function findMatchingItemId(ItemCode) {
 
     return itemList;
 }
+
+export function addToCart(OrderDetails) {
+    orderDetails.push(OrderDetails);
+    displayItems(orderDetails);
+}
+
+function displayItems(items) {
+    let tableBody = document.querySelector("#OrderTableBodyID");
+    tableBody.innerHTML = "";
+
+    items.forEach(function(item) {
+
+        let newRow = document.createElement("tr");
+
+        let codeCell = document.createElement("td");
+        codeCell.textContent = item.ItemsCode;
+        newRow.appendChild(codeCell);
+
+        let nameCell = document.createElement("td");
+        nameCell.textContent = item.ItemsName;
+        newRow.appendChild(nameCell);
+
+        let priceCell = document.createElement("td");
+        priceCell.textContent = item.ItemsPrice;
+        newRow.appendChild(priceCell);
+
+        let qtyCell = document.createElement("td");
+        qtyCell.textContent = item.ItemsQty;
+        newRow.appendChild(qtyCell);
+
+        tableBody.appendChild(newRow);
+    });
+}
+
+
+
+
+
+
+// let order = {
+//     orderID: getOrderId(),
+//     details: OrderDetails
+// }
+//
+// orders.push(order);
