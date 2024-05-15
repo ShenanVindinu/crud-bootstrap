@@ -3,6 +3,9 @@ import {items} from "../db/items.js";
 import {addToCart, findMatchingCusId, findMatchingItemId, getOrderId, todaysDate} from "../Model/OrderModel.js";
 
 
+let flag = true;
+
+
 //Invoice Details
 
 function generateOrderID() {
@@ -180,14 +183,113 @@ $("#AddToCart").click(function () {
    let ItemQTY = $("#OrderQtyField").val();
 
 
+   checkForEmptyItemsFields();
 
-    addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY);
+   checkForEmptyCusFields();
+
+   if (flag) {
+       addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY);
+   }
+
+   flag = true;
 
 
 });
+
+
+function checkForEmptyCusFields() {
+
+    var customerId = $("#CustomerIDField2").val().trim();
+    if (customerId === "") {
+        flag = false;
+        showAlert("Please enter Customer ID");
+        return;
+    }
+
+
+    var customerName = $("#CustomerNameField2").val().trim();
+    if (customerName === "") {
+        flag = false;
+        showAlert("Please enter Customer Name");
+        return;
+    }
+
+
+    var customerSalary = $("#CustomerSalaryField2").val().trim();
+    if (customerSalary === "") {
+        flag = false;
+        showAlert("Please enter Customer Salary");
+        return;
+    }
+
+
+    var customerAddress = $("#CustomerAddressField2").val().trim();
+    if (customerAddress === "") {
+        flag = false;
+        showAlert("Please enter Customer Address");
+        return;
+    }
+
+}
+
+function checkForEmptyItemsFields() {
+
+    var itemCode = $("#ItemCodeField2").val();
+    if (itemCode === "") {
+        flag = false;
+        showAlert("Please enter Item Code");
+        return;
+    }
+
+
+    var itemName = $("#ItemNameField2").val();
+    if (itemName === "") {
+        flag = false;
+        showAlert("Please enter Item Name");
+        return;
+    }
+
+
+    var itemPrice = $("#ItemPriceField2").val();
+    if (itemPrice === "") {
+        flag = false;
+        showAlert("Please enter Price");
+        return;
+    }
+
+
+    var qtyOnHand = $("#QtyOnHandField").val();
+    if (qtyOnHand === "") {
+        flag = false;
+        showAlert("Please enter QTY on Hand");
+        return;
+    }
+
+
+    var orderQty = $("#OrderQtyField").val();
+    if (orderQty === "") {
+        flag = false;
+        showAlert("Please enter Order qty");
+        return;
+    }
+
+}
 
 export function showTotals(Subtotal) {
     $("#totalText").text("Total: Rs." + Subtotal);
     $("#SubTotalText").text("Sub Total: Rs." + Subtotal);
 }
+
+
+function showAlert(message) {
+    $("#customAlertMessage").text(message);
+    $("#customAlertModal").modal("show");
+}
+
+function clearCartTable() {
+    var tableBody = $("#OrderTableBodyID");
+    tableBody.empty();
+}
+
+
 

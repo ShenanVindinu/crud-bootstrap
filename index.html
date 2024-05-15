@@ -395,7 +395,7 @@
                                         <div class="col">
                                             <h6>Item Code</h6>
                                             <div class="input-group mb-3">
-                                                <input id="ItemCodeField2" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1">
+                                                <input id="ItemCodeField2" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1" required>
                                             </div>
                                         </div>
                                         <div class="col">
@@ -419,7 +419,7 @@
                                         <div class="col">
                                             <h6>Order qty</h6>
                                             <div class="input-group mb-3">
-                                                <input id="OrderQtyField" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1">
+                                                <input id="OrderQtyField" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1" required>
                                             </div>
                                         </div>
                                         <div class="d-grid col-12 mb-2 mt-4">
@@ -494,6 +494,26 @@
 
     </main>
 </section>
+
+
+<div id="customAlertModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="customAlertMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning btn-lg" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 
