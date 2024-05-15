@@ -44,7 +44,23 @@ export function findMatchingItemId(ItemCode) {
     return itemList;
 }
 
-export function addToCart(OrderDetails) {
+export function addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY) {
+
+    let totalValue = ItemPrice * ItemQTY;
+
+    let OrderDetails = {
+        CustomerID: CusId,
+        CustomerName: CusName,
+        CustomerSalary: CusSalary,
+        CustomerAddress: CusAddress,
+        ItemsCode: ItemCode,
+        ItemsName: ItemName,
+        ItemsPrice: ItemPrice,
+        ItemsOnHandQTY: ItemQTYOnHand,
+        ItemsQty: ItemQTY,
+        total: totalValue
+    };
+
     orderDetails.push(OrderDetails);
     displayItems(orderDetails);
 }
@@ -72,6 +88,10 @@ function displayItems(items) {
         let qtyCell = document.createElement("td");
         qtyCell.textContent = item.ItemsQty;
         newRow.appendChild(qtyCell);
+
+        let totalCell = document.createElement("td");
+        totalCell.textContent = item.total;
+        newRow.appendChild(totalCell);
 
         tableBody.appendChild(newRow);
     });

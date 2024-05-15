@@ -179,19 +179,9 @@ $("#AddToCart").click(function () {
    let ItemQTYOnHand = $("#QtyOnHandField").val();
    let ItemQTY = $("#OrderQtyField").val();
 
-    let OrderDetails = {
-        CustomerID: CusId,
-        CustomerName: CusName,
-        CustomerSalary: CusSalary,
-        CustomerAddress: CusAddress,
-        ItemsCode: ItemCode,
-        ItemsName: ItemName,
-        ItemsPrice: ItemPrice,
-        ItemsOnHandQTY: ItemQTYOnHand,
-        ItemsQty: ItemQTY
-    };
 
-    addToCart(OrderDetails);
+
+    addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY);
 
 
 });
