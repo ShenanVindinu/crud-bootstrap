@@ -1,6 +1,11 @@
 import {orderDetails, orders} from "../db/Orders.js";
 import { customers } from "../db/customers.js";
 import {items} from "../db/items.js";
+import {showTotals} from "../Controller/OrderController.js";
+
+
+let SubTotal = 0;
+
 
 export function getOrderId() {
     const orderCount = orders.length;
@@ -47,6 +52,9 @@ export function findMatchingItemId(ItemCode) {
 export function addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY) {
 
     let totalValue = ItemPrice * ItemQTY;
+    SubTotal += totalValue;
+
+    showTotals(SubTotal);
 
     let OrderDetails = {
         CustomerID: CusId,

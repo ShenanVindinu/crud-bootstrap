@@ -186,3 +186,8 @@ $("#AddToCart").click(function () {
 
 });
 
+export function showTotals(Subtotal) {
+    $("#totalText").text("Total: Rs." + Subtotal);
+    $("#SubTotalText").text("Sub Total: Rs." + Subtotal);
+}
+
