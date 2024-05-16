@@ -27,24 +27,39 @@ $(document).ready(function() {
 });
 
 
+
 function saveItem() {
-    let ItemCode = $("#ItemCodeField").val();
-    let ItemName = $("#ItemNameField").val();
-    let ItemPrice = $("#ItemPriceField").val();
-    let ItemQTY = $("#ItemQTYField").val();
+    var ItemCode = $("#ItemCodeField").val().trim();
+    var ItemName = $("#ItemNameField").val().trim();
+    var ItemQty = $("#ItemQTYField").val().trim();
+    var ItemPrice = $("#ItemPriceField").val().trim();
 
-    let item = {
-        code: ItemCode,
-        name: ItemName,
-        price: ItemPrice,
-        qty: ItemQTY
-    };
 
-    addItem(item);
+    if (ItemCode === '' || ItemName === '' || ItemQty === '' || ItemPrice === '') {
 
-    let allItems = getAllItems();
-    displayItems(allItems);
-    getItemCodes();
+        showAlert("Please fill in all item details.");
+
+    } else {
+
+        let item = {
+            code: ItemCode,
+            name: ItemName,
+            price: ItemPrice,
+            qty: ItemQty
+        };
+
+        addItem(item);
+
+        let allItems = getAllItems();
+        displayItems(allItems);
+        getItemCodes();
+
+    }
+}
+
+function showAlert(message) {
+    $("#customAlertMessage").text(message);
+    $("#customAlertModal").modal("show");
 }
 
 function displayItems(items) {
