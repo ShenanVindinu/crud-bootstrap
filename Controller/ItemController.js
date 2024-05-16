@@ -64,8 +64,8 @@ function showAlert(message) {
 
 function displayItems(items) {
 
-    let tableBody = $("#TableBodyItem");
-    tableBody.innerHTML = "";
+    var tableBody = $("#TableBodyItem");
+    tableBody.empty();
 
     items.forEach(function(item) {
         let newRow = $("<tr>");

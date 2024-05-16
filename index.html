@@ -41,6 +41,15 @@
         font-size: 2rem;
     }
 
+    .tableBodies tr {
+        height: 50px;
+    }
+
+
+    .tableBodies td {
+        padding: 10px;
+    }
+
 </style>
 
 <body>
@@ -168,15 +177,18 @@
                         <th scope="col">Salary</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tableBodies">
                     <tr>
-
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-
-                    </tr>
-                    <tr>
-
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     </tbody>
                 </table>
@@ -274,15 +286,18 @@
                         <th scope="col">Quantity</th>
                     </tr>
                     </thead>
-                    <tbody id="TableBodyItem">
+                    <tbody class="tableBodies" id="TableBodyItem">
                     <tr>
-
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-
-                    </tr>
-                    <tr>
-
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     </tbody>
                 </table>
@@ -408,7 +423,7 @@
                                             <h6>Item</h6>
                                             <div class="dropdown">
                                                 <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    P002
+                                                    Select
                                                 </a>
 
                                                 <ul id="ItemDropDownMenu" class="dropdown-menu">
@@ -470,18 +485,18 @@
                                         <div class="col">
                                             <h6>Cash</h6>
                                             <div class="input-group mb-3">
-                                                <input id="CashInputField" type="text" class="form-control" placeholder="5000" aria-label="" aria-describedby="basic-addon1">
+                                                <input id="CashInputField" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                         <div class="col">
                                             <h6>Discount</h6>
                                             <div class="input-group mb-3">
-                                                <input id="DiscountInputField" type="number" class="form-control" placeholder="10" aria-label="" aria-describedby="basic-addon1">
+                                                <input id="DiscountInputField" type="number" class="form-control" aria-label="" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                         <h6>Balance</h6>
                                         <div class="input-group mb-3">
-                                            <input id="BalanceInputField" type="text" class="form-control" placeholder="4050" aria-label="" aria-describedby="basic-addon1">
+                                            <input id="BalanceInputField" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
                                     <div class="d-grid gap-2">
@@ -509,8 +524,21 @@
                     <th scope="col">Total</th>
                 </tr>
                 </thead>
-                <tbody id="OrderTableBodyID">
-
+                <tbody class="tableBodies" id="OrderTableBodyID">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
 
