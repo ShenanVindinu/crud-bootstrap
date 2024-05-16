@@ -195,7 +195,13 @@ $("#AddToCart").click(function () {
    checkForEmptyCusFields();
 
    if (flag) {
-       addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY);
+       if (ItemQTYOnHand>=ItemQTY) {
+           addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY);
+           $("#QtyOnHandField").val(ItemQTYOnHand-ItemQTY);
+       }
+       else {
+           showAlert("Item Out of Stock");
+       }
    }
 
    flag = true;
