@@ -243,6 +243,21 @@ $("#PlaceOrderBtn").click(function () {
     let Cash = $("#CashInputField").val().trim();
     let Discount = $("#DiscountInputField").val().trim();
     let Balance = $("#BalanceInputField").val().trim();
+    let SubTotal = $("#SubTotalText").val().trim();
+
+    let subtotal = getSubTotal();
+
+    if ( Cash < subtotal ) {
+        showAlert("Insufficient Funds!");
+    }
+
+    else {
+        showAlert("Order Placed Successfully");
+        clearCartTable();
+        clearCusFields();
+        clearItemFields();
+        clearTotalFields();
+    }
 
 });
 
@@ -337,6 +352,14 @@ function showAlert(message) {
 function clearCartTable() {
     var tableBody = $("#OrderTableBodyID");
     tableBody.empty();
+}
+
+function clearTotalFields() {
+    $("#CashInputField").val('');
+    $("#DiscountInputField").val('');
+    $("#BalanceInputField").val('');
+    $("#SubTotalText").text('Total : ');
+    $("#totalText").text('Sub Total : ');
 }
 
 
