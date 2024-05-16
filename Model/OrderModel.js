@@ -5,6 +5,8 @@ import {showTotals} from "../Controller/OrderController.js";
 
 
 let SubTotal = 0;
+let totalValue = 0;
+let totalValueForBalance = 0;
 
 
 export function getOrderId() {
@@ -51,7 +53,8 @@ export function findMatchingItemId(ItemCode) {
 
 export function addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY) {
 
-    let totalValue = ItemPrice * ItemQTY;
+    totalValue = ItemPrice * ItemQTY;
+    totalValueForBalance += totalValue;
     SubTotal += totalValue;
 
     showTotals(SubTotal);
@@ -103,6 +106,18 @@ function displayItems(items) {
 
         tableBody.appendChild(newRow);
     });
+}
+
+export function getBalanceMoney(Cash, Discount) {
+    let discount = (totalValueForBalance * Discount/100);
+
+    SubTotal = totalValueForBalance - discount;
+
+    return  Cash - SubTotal;
+}
+
+export function getSubTotal() {
+    return SubTotal;
 }
 
 

@@ -1,6 +1,13 @@
 import {customers} from "../db/customers.js";
 import {items} from "../db/items.js";
-import {addToCart, findMatchingCusId, findMatchingItemId, getOrderId, todaysDate} from "../Model/OrderModel.js";
+import {
+    addToCart,
+    findMatchingCusId,
+    findMatchingItemId,
+    getBalanceMoney,
+    getOrderId, getSubTotal,
+    todaysDate
+} from "../Model/OrderModel.js";
 
 
 let flag = true;
@@ -197,6 +204,42 @@ $("#AddToCart").click(function () {
 });
 
 
+$("#CashInputField").keyup(function () {
+
+    let Cash = $("#CashInputField").val().trim();
+    let Discount = $("#DiscountInputField").val().trim();
+
+    let balanceMoney = getBalanceMoney(Cash, Discount);
+
+    $("#BalanceInputField").val(balanceMoney);
+
+});
+
+
+
+$("#DiscountInputField").keyup(function () {
+
+    let Cash = $("#CashInputField").val().trim();
+    let Discount = $("#DiscountInputField").val().trim();
+
+    let balanceMoney = getBalanceMoney(Cash, Discount);
+    $("#BalanceInputField").val(balanceMoney);
+
+    let SubTotal = getSubTotal();
+    $("#SubTotalText").text("Sub Total: Rs." + SubTotal);
+
+
+});
+
+
+$("#PlaceOrderBtn").click(function () {
+
+    let Cash = $("#CashInputField").val().trim();
+    let Discount = $("#DiscountInputField").val().trim();
+    let Balance = $("#BalanceInputField").val().trim();
+
+});
+
 function checkForEmptyCusFields() {
 
     var customerId = $("#CustomerIDField2").val().trim();
@@ -279,7 +322,6 @@ export function showTotals(Subtotal) {
     $("#totalText").text("Total: Rs." + Subtotal);
     $("#SubTotalText").text("Sub Total: Rs." + Subtotal);
 }
-
 
 function showAlert(message) {
     $("#customAlertMessage").text(message);
