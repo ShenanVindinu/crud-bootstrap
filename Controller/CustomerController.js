@@ -31,10 +31,10 @@ $(document).ready(function() {
 function saveCustomer() {
 
 
-    var customerId = document.getElementById("CustomerIDField").value.trim();
-    var customerName = document.getElementById("CustomerNameField").value.trim();
-    var customerAddress = document.getElementById("CustomerAddressField").value.trim();
-    var customerSalary = document.getElementById("CustomerSalaryField").value.trim();
+    var customerId = $("#CustomerIDField").val().trim();
+    var customerName = $("#CustomerNameField").val().trim();
+    var customerAddress = $("#CustomerAddressField").val().trim();
+    var customerSalary = $("#CustomerSalaryField").val().trim();
 
 
     if (customerId === '' || customerName === '' || customerAddress === '' || customerSalary === '') {
