@@ -17,6 +17,32 @@
 
 </head>
 
+<style>
+
+    #ordersContainer {
+        margin-top: 4vh;
+    }
+
+    #HomePageContainer {
+        margin-top: 12vh;
+    }
+
+    #Menu_Heading {
+        width: 20vw;
+        height: 5.5vh;
+        color: #eeeeee;
+        font-size: 2rem;
+        background-color: #000000;
+        border-radius: 10px;
+    }
+
+    .MainCardTextHeadings {
+        color: #4F2730;
+        font-size: 2rem;
+    }
+
+</style>
+
 <body>
 
 
@@ -54,12 +80,12 @@
 
 <section id="HomePage">
     <main>
-        <div class="container">
+        <div class="container" id="HomePageContainer">
             <div class="card-body d-flex flex-column align-items-center">
                 <h3 class="text-center my-5" id="Menu_Heading">Select Menu</h3>
                 <div class="d-grid gap-5 col-6 mx-auto">
                     <button id="CustomerButtonInHome" class="btn btn-dark btn-lg" type="button">
-                        <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+                        <i class="fa-regular fa-user" style="color: #eeeeee;"></i>
                         Customers
                     </button>
 
@@ -69,7 +95,7 @@
                     </button>
 
                     <button id="ItemsButtonInHome" class="btn btn-dark btn-lg" type="button">
-                        <i class="fa-solid fa-bowl-food" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-bowl-food" style="color: #eeeeee;"></i>
                         Items
                     </button>
                 </div>
@@ -82,7 +108,7 @@
     <main>
 
         <div class="container-lg my-5">
-            <h3>
+            <h3 class="MainCardTextHeadings">
                 <i class="fa-regular fa-user" style="color: #4F2730"></i>
                 Customer
             </h3>
@@ -185,7 +211,7 @@
     <main>
 
         <div  class="container my-5">
-            <h3>
+            <h3 class="MainCardTextHeadings">
                 <i class="fa-solid fa-bowl-food" style="color: #4F2730;"></i>
                 Item
             </h3>
@@ -239,29 +265,29 @@
 
                 </div>
 
+                <table class="table">
+                    <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody id="TableBodyItem">
+                    <tr>
+
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    </tbody>
+                </table>
+
             </div>
-
-            <table class="table">
-                <thead class="table-primary">
-                <tr>
-                    <th scope="col">Item Code</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                </tr>
-                </thead>
-                <tbody id="TableBodyItem">
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-                </tbody>
-            </table>
 
         </div>
 
@@ -290,7 +316,7 @@
 </section>
 
 <section id="OrdersPage">
-    <main class="container mt-4">
+    <main class="container" id="ordersContainer">
 
         <div class="card">
             <div class="card-header">
