@@ -30,25 +30,38 @@ $(document).ready(function() {
 
 function saveCustomer() {
 
-    let customerId = document.getElementById("CustomerIDField").value;
-    let customerName = document.getElementById("CustomerNameField").value;
-    let customerAddress = document.getElementById("CustomerAddressField").value;
-    let customerSalary = document.getElementById("CustomerSalaryField").value;
 
-    let customer = {
-        id: customerId,
-        name: customerName,
-        address: customerAddress,
-        salary: customerSalary
-    };
+    var customerId = document.getElementById("CustomerIDField").value.trim();
+    var customerName = document.getElementById("CustomerNameField").value.trim();
+    var customerAddress = document.getElementById("CustomerAddressField").value.trim();
+    var customerSalary = document.getElementById("CustomerSalaryField").value.trim();
 
 
-    addCustomer(customer);
+    if (customerId === '' || customerName === '' || customerAddress === '' || customerSalary === '') {
 
+        showAlert("Please fill in all customer details.");
 
-    let allCustomers = getAllCustomers();
-    displayCustomers(allCustomers);
-    getCusIds();
+    } else {
+
+        let customer = {
+            id: customerId,
+            name: customerName,
+            address: customerAddress,
+            salary: customerSalary
+        };
+
+        addCustomer(customer);
+
+        let allCustomers = getAllCustomers();
+        displayCustomers(allCustomers);
+        getCusIds();
+
+    }
+}
+
+function showAlert(message) {
+    $("#customAlertMessage").text(message);
+    $("#customAlertModal").modal("show");
 }
 
 function deleteCus() {
