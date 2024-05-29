@@ -1,3 +1,3 @@
 let customers = [];
 
-export { customers };
+export {customers};

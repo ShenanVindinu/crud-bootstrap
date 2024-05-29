@@ -1,5 +1,5 @@
 import {orderDetails, orders} from "../db/Orders.js";
-import { customers } from "../db/customers.js";
+import {customers} from "../db/customers.js";
 import {items} from "../db/items.js";
 import {showTotals} from "../Controller/OrderController.js";
 
@@ -51,7 +51,7 @@ export function findMatchingItemId(ItemCode) {
     return itemList;
 }
 
-export function addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY) {
+export function addToCart(CusId, CusName, CusSalary, CusAddress, ItemCode, ItemName, ItemPrice, ItemQTYOnHand, ItemQTY) {
 
     totalValue = ItemPrice * ItemQTY;
     totalValueForBalance += totalValue;
@@ -80,7 +80,7 @@ function displayItems(items) {
     let tableBody = document.querySelector("#OrderTableBodyID");
     tableBody.innerHTML = "";
 
-    items.forEach(function(item) {
+    items.forEach(function (item) {
 
         let newRow = document.createElement("tr");
 
@@ -109,20 +109,16 @@ function displayItems(items) {
 }
 
 export function getBalanceMoney(Cash, Discount) {
-    let discount = (totalValueForBalance * Discount/100);
+    let discount = (totalValueForBalance * Discount / 100);
 
     SubTotal = totalValueForBalance - discount;
 
-    return  Cash - SubTotal;
+    return Cash - SubTotal;
 }
 
 export function getSubTotal() {
     return SubTotal;
 }
-
-
-
-
 
 
 // let order = {

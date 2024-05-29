@@ -1,27 +1,26 @@
-import { addCustomer, getAllCustomers, clearCustomers, deleteCustomers, updateCustomer } from '../Model/CustomerModel.js';
-import { getCusIds } from './OrderController.js';
+import {addCustomer, getAllCustomers, clearCustomers, deleteCustomers, updateCustomer} from '../Model/CustomerModel.js';
+import {getCusIds} from './OrderController.js';
 
 
+$(document).ready(function () {
 
-$(document).ready(function() {
-
-    $("#SaveConfirm").click(function() {
+    $("#SaveConfirm").click(function () {
         saveCustomer();
         clearFields();
 
         $("#NewCustomerModal").modal("hide");
     });
 
-    $("#CustomerClearBt").click(function() {
+    $("#CustomerClearBt").click(function () {
         clearCustomers();
         clearFields();
     });
 
-    $("#CustomerDeleteButton").click(function() {
+    $("#CustomerDeleteButton").click(function () {
         deleteCus();
     });
 
-    $("#CustomerUpdateButton").click(function() {
+    $("#CustomerUpdateButton").click(function () {
         updateCus();
     });
 
@@ -86,7 +85,7 @@ function displayCustomers(customers) {
     let tableBody = document.querySelector(".table tbody");
     tableBody.innerHTML = "";
 
-    customers.forEach(function(customer) {
+    customers.forEach(function (customer) {
         let newRow = document.createElement("tr");
 
         let idCell = document.createElement("td");
@@ -116,6 +115,6 @@ function clearFields() {
     document.getElementById("CustomerSalaryField").value = "";
 }
 
-export { displayCustomers };
+export {displayCustomers};
 
 

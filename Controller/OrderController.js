@@ -38,7 +38,7 @@ export function getCusIds() {
 
     clearCusDropdownMenu();
 
-    customers.forEach(function(customer) {
+    customers.forEach(function (customer) {
         addCusDropdownIDs(customer.id.toString().padStart(3, "0"));
     });
 
@@ -74,7 +74,7 @@ function loadOrderId() {
 
 }
 
-document.getElementById("CustomerIDDropDownMenu").addEventListener("click", function(event) {
+document.getElementById("CustomerIDDropDownMenu").addEventListener("click", function (event) {
 
     var target = event.target;
     console.log("Test");
@@ -97,7 +97,7 @@ document.getElementById("CustomerIDDropDownMenu").addEventListener("click", func
 
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     loadOrderId();
 
@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
-
 
 
 //Item Select
@@ -140,13 +139,13 @@ export function getItemCodes() {
 
     clearItemDropdownMenu();
 
-    items.forEach(function(item) {
+    items.forEach(function (item) {
         addItemDropdownCodes(item.code.toString().padStart(3, "0"));
     });
 
 }
 
-document.getElementById("ItemDropDownMenu").addEventListener("click", function(event) {
+document.getElementById("ItemDropDownMenu").addEventListener("click", function (event) {
 
     var target = event.target;
     console.log("event Triggered");
@@ -178,33 +177,32 @@ document.getElementById("ItemDropDownMenu").addEventListener("click", function(e
 
 $("#AddToCart").click(function () {
 
-   let CusId = $("#CustomerIDField2").val();
-   let CusName =$("#CustomerNameField2").val();
-   let CusSalary = $("#CustomerSalaryField2").val();
-   let CusAddress = $("#CustomerAddressField2").val();
+    let CusId = $("#CustomerIDField2").val();
+    let CusName = $("#CustomerNameField2").val();
+    let CusSalary = $("#CustomerSalaryField2").val();
+    let CusAddress = $("#CustomerAddressField2").val();
 
-   let ItemCode = $("#ItemCodeField2").val();
-   let ItemName = $("#ItemNameField2").val();
-   let ItemPrice = $("#ItemPriceField2").val();
-   let ItemQTYOnHand = $("#QtyOnHandField").val();
-   let ItemQTY = $("#OrderQtyField").val();
+    let ItemCode = $("#ItemCodeField2").val();
+    let ItemName = $("#ItemNameField2").val();
+    let ItemPrice = $("#ItemPriceField2").val();
+    let ItemQTYOnHand = $("#QtyOnHandField").val();
+    let ItemQTY = $("#OrderQtyField").val();
 
 
-   checkForEmptyItemsFields();
+    checkForEmptyItemsFields();
 
-   checkForEmptyCusFields();
+    checkForEmptyCusFields();
 
-   if (flag) {
-       if (ItemQTYOnHand>=ItemQTY) {
-           addToCart(CusId,CusName,CusSalary,CusAddress,ItemCode,ItemName,ItemPrice,ItemQTYOnHand,ItemQTY);
-           $("#QtyOnHandField").val(ItemQTYOnHand-ItemQTY);
-       }
-       else {
-           showAlert("Item Out of Stock");
-       }
-   }
+    if (flag) {
+        if (ItemQTYOnHand >= ItemQTY) {
+            addToCart(CusId, CusName, CusSalary, CusAddress, ItemCode, ItemName, ItemPrice, ItemQTYOnHand, ItemQTY);
+            $("#QtyOnHandField").val(ItemQTYOnHand - ItemQTY);
+        } else {
+            showAlert("Item Out of Stock");
+        }
+    }
 
-   flag = true;
+    flag = true;
 
 
 });
@@ -220,7 +218,6 @@ $("#CashInputField").keyup(function () {
     $("#BalanceInputField").val(balanceMoney);
 
 });
-
 
 
 $("#DiscountInputField").keyup(function () {
@@ -247,11 +244,9 @@ $("#PlaceOrderBtn").click(function () {
 
     let subtotal = getSubTotal();
 
-    if ( Cash < subtotal ) {
+    if (Cash < subtotal) {
         showAlert("Insufficient Funds!");
-    }
-
-    else {
+    } else {
         showAlert("Order Placed Successfully");
         clearCartTable();
         clearCusFields();

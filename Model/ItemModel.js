@@ -1,4 +1,4 @@
-import { items } from "../db/items.js";
+import {items} from "../db/items.js";
 import {displayItems} from "../Controller/ItemController.js";
 
 function addItem(item) {
@@ -35,4 +35,4 @@ function updateItems(updatedItem) {
     }
 }
 
-export  { addItem, getAllItems, removeItem, clearItems, updateItems };
+export {addItem, getAllItems, removeItem, clearItems, updateItems};

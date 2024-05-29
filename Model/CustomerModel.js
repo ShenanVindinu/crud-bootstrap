@@ -1,5 +1,5 @@
-import { customers } from '../db/customers.js';
-import { displayCustomers } from '../Controller/CustomerController.js';
+import {customers} from '../db/customers.js';
+import {displayCustomers} from '../Controller/CustomerController.js';
 
 function addCustomer(customer) {
     customers.push(customer);
@@ -53,4 +53,4 @@ function updateCustomer(customerId, customerName, customerAddress, customerSalar
 }
 
 
-export { addCustomer, getAllCustomers, clearCustomers, deleteCustomers,updateCustomer };
+export {addCustomer, getAllCustomers, clearCustomers, deleteCustomers, updateCustomer};

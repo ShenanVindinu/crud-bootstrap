@@ -1,9 +1,9 @@
-import { addItem, clearItems, getAllItems, removeItem, updateItems } from "../Model/ItemModel.js";
+import {addItem, clearItems, getAllItems, removeItem, updateItems} from "../Model/ItemModel.js";
 import {getItemCodes} from "./OrderController.js";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $("#ConfirmItemChanges").click(function() {
+    $("#ConfirmItemChanges").click(function () {
         saveItem();
         clearFields();
 
@@ -11,21 +11,20 @@ $(document).ready(function() {
     });
 
 
-    $("#deleteItem").click(function() {
+    $("#deleteItem").click(function () {
         deleteItem();
     });
 
 
-    $("#updateItem").click(function() {
+    $("#updateItem").click(function () {
         updateItem();
     });
 
 
-    $("#clearItem").click(function() {
+    $("#clearItem").click(function () {
         clearItems();
     });
 });
-
 
 
 function saveItem() {
@@ -67,7 +66,7 @@ function displayItems(items) {
     var tableBody = $("#TableBodyItem");
     tableBody.empty();
 
-    items.forEach(function(item) {
+    items.forEach(function (item) {
         let newRow = $("<tr>");
 
         let idCell = $("<td>").text(item.code);
@@ -86,7 +85,6 @@ function displayItems(items) {
     });
 
 }
-
 
 
 function deleteItem() {
@@ -135,4 +133,4 @@ function clearFields() {
 
 }
 
-export { displayItems };
+export {displayItems};

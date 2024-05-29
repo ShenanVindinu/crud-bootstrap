@@ -1,3 +1,3 @@
 let items = [];
 
-export { items };
+export {items};
