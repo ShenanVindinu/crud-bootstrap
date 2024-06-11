@@ -193,8 +193,9 @@ $("#AddToCart").click(function () {
 
     checkForEmptyCusFields();
 
+
     if (flag) {
-        if (ItemQTYOnHand >= ItemQTY) {
+        if (ItemQTY < ItemQTYOnHand) {
             addToCart(CusId, CusName, CusSalary, CusAddress, ItemCode, ItemName, ItemPrice, ItemQTYOnHand, ItemQTY);
             $("#QtyOnHandField").val(ItemQTYOnHand - ItemQTY);
         } else {
@@ -203,7 +204,6 @@ $("#AddToCart").click(function () {
     }
 
     flag = true;
-
 
 });
 
