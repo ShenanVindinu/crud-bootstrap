@@ -2,10 +2,11 @@
     width: 150px;
     height: 55px;
     position: relative;
+    filter: grayscale(100%);
 }
 
 .navbar {
-    background-color: #4F2730;
+    background-color: #212529;
 }
 
 .nav-link {
