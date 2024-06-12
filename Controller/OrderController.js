@@ -1,12 +1,7 @@
 import {customers} from "../db/customers.js";
 import {items} from "../db/items.js";
 import {
-    addToCart,
-    findMatchingCusId,
-    findMatchingItemId,
-    getBalanceMoney,
-    getOrderId, getSubTotal, getTodayDate,
-    todaysDate
+    addToCart, findMatchingCusId, findMatchingItemId, getBalanceMoney, getOrderId, getSubTotal, getTodayDate, todaysDate
 } from "../Model/OrderModel.js";
 import {orderDetails, orders} from "../db/Orders.js";
 
