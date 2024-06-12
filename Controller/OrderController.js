@@ -5,9 +5,10 @@ import {
     findMatchingCusId,
     findMatchingItemId,
     getBalanceMoney,
-    getOrderId, getSubTotal,
+    getOrderId, getSubTotal, getTodayDate,
     todaysDate
 } from "../Model/OrderModel.js";
+import {orderDetails, orders} from "../db/Orders.js";
 
 
 let flag = true;
@@ -248,6 +249,34 @@ $("#PlaceOrderBtn").click(function () {
         showAlert("Insufficient Funds!");
     } else {
         showAlert("Order Placed Successfully");
+
+        let orderId = $("#OrderID").val();
+        let date = getTodayDate();
+
+        let CusId = $("#CustomerIDField2").val();
+        let CusName = $("#CustomerNameField2").val();
+        let CusSalary = $("#CustomerSalaryField2").val();
+        let CusAddress = $("#CustomerAddressField2").val();
+
+        let order = {
+            orderId: orderId,
+            date: date,
+            CusId: CusId,
+            CusName: CusName,
+            CusSalary: CusSalary,
+            CusAddress: CusAddress,
+            orderDetails: orderDetails,
+            Cash: Cash,
+            Discount: Discount,
+            Balance: Balance,
+            SubTotal: subtotal,
+        }
+
+        orders.push(order);
+        orderDetails.splice(0); //resetting array
+        console.log(order);
+
+
         clearCartTable();
         clearCusFields();
         clearItemFields();

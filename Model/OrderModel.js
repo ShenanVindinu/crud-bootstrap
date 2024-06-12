@@ -23,6 +23,12 @@ export function todaysDate() {
     $("#OrderDateField").val(formattedDate);
 }
 
+export function getTodayDate() {
+    var today = new Date();
+
+    return today.toISOString().split('T')[0];
+}
+
 export function findMatchingCusId(customerId) {
 
     var customer = null;
